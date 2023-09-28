@@ -9,7 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.util.List;
-
 @SpringBootApplication
 public class DemoApplication {
 
@@ -22,7 +21,7 @@ public class DemoApplication {
 	CommandLineRunner commandLineRunner(BookRepository bookRepository){
 		return args -> {
 			Book got = new Book("got","GRRM",4000);
-			Review review = new Review("great","greater");
+			Review review = new Review(null,"great","greater");
 			got.setReviews((List.of(review)));
 			bookRepository.save(got);
 		};
